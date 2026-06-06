@@ -1,0 +1,59 @@
+{
+  "mcpServers": {
+    "stripe": {
+      "url": "https://api.stripe.com/v1",
+      "auth": {
+        "type": "bearer",
+        "tokenEnv": "STRIPE_API_KEY"
+      },
+      "endpoints": {
+        "charges": "/v1/charges",
+        "customers": "/v1/customers",
+        "payment_intents": "/v1/payment_intents",
+        "subscriptions": "/v1/subscriptions",
+        "invoices": "/v1/invoices",
+        "refunds": "/v1/refunds",
+        "webhook_endpoints": "/v1/webhook_endpoints"
+      },
+      "features": {
+        "rate_limiting": true,
+        "retry_policy": "exponential_backoff",
+        "idempotency": true,
+        "webhook_validation": true
+      }
+    },
+    "zapier": {
+      "url": "https://mcp.zapier.com/api/v1/connect",
+      "integration": "stripe",
+      "webhooks": true,
+      "automation": true
+    }
+  },
+  "agent": {
+    "name": "Super Agente IA Stripe",
+    "version": "1.0.0",
+    "description": "Agente especializado en integración completa de pagos con Stripe",
+    "capabilities": [
+      "crear_clientes",
+      "procesar_pagos",
+      "gestionar_suscripciones",
+      "emitir_facturas",
+      "procesar_reembolsos",
+      "validar_webhooks",
+      "reportes_financieros",
+      "seguridad_2fa"
+    ],
+    "permissions": {
+      "payments": ["read", "write"],
+      "customers": ["read", "write"],
+      "invoices": ["read", "write"],
+      "subscriptions": ["read", "write"],
+      "webhooks": ["read", "write"]
+    },
+    "compliance": {
+      "pci_dss": "enabled",
+      "encryption": "AES-256",
+      "audit_logs": "enabled"
+    }
+  }
+}
